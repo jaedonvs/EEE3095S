@@ -1,0 +1,29 @@
+!SESSION 2023-08-29 00:16:41.428 -----------------------------------------------
+eclipse.buildId=Version 1.13.1
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_ZA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-08-29 00:17:13.306
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-08-29 00:17:13.320
+!MESSAGE Log4j2 initialized with config file C:\Users\jaedo\OneDrive\Desktop\Online Uni\UCT\3rd year\Sem2\EEE3095\Practicals\EEE3096S-2023-main\WorkPackage2\Prac2_student\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-08-29 00:17:18.482
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.resources 4 77 2023-08-29 00:17:48.899
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-08-29 00:17:48.899
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-08-29 00:17:48.899
+!MESSAGE C:\Users\jaedo\OneDrive\Desktop\Online Uni\UCT\3rd year\Sem2\EEE3095\Practicals\EEE3096S-2023-main\WorkPackage2\Prac2_student overlaps the workspace location: C:\Users\jaedo\OneDrive\Desktop\Online Uni\UCT\3rd year\Sem2\EEE3095\Practicals\EEE3096S-2023-main\WorkPackage2\Prac2_student
+
+!ENTRY org.eclipse.core.resources 4 77 2023-08-29 00:18:43.258
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-08-29 00:18:43.258
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-08-29 00:18:43.258
+!MESSAGE C:\Users\jaedo\OneDrive\Desktop\Online Uni\UCT\3rd year\Sem2\EEE3095\Practicals\EEE3096S-2023-main\WorkPackage2\Prac2_student overlaps the workspace location: C:\Users\jaedo\OneDrive\Desktop\Online Uni\UCT\3rd year\Sem2\EEE3095\Practicals\EEE3096S-2023-main\WorkPackage2\Prac2_student
