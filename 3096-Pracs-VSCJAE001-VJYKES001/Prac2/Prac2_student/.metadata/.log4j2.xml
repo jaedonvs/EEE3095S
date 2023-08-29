@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+    <ThresholdFilter level="INFO"/>
+    <Appenders>
+        <RollingFile name="DEBUGFILE" fileName="C:/Users/jaedo/OneDrive/Desktop/Online Uni/UCT/3rd year/Sem2/EEE3095/Practicals/EEE3096S-2023-main/WorkPackage2/Prac2_student/.metadata/.ide.log" filePattern="C:/Users/jaedo/OneDrive/Desktop/Online Uni/UCT/3rd year/Sem2/EEE3095/Practicals/EEE3096S-2023-main/WorkPackage2/Prac2_student/.metadata/.ide.log-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%p] %c{1}:%L - %m%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="50MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="DEBUGFILE" />
+        </Root>
+    </Loggers>
+</Configuration>
