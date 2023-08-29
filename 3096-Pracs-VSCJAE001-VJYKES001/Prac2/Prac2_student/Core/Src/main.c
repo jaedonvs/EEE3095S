@@ -62,7 +62,8 @@ static uint8_t patterns[] = {
 		0b00001111
 };
 static uint8_t current_index = 0;
-static uint8_t change = 0;
+static uint8_t change = 1;
+static uint8_t lastButtonState = 1;
 
 
 /* USER CODE END PV */
@@ -128,22 +129,56 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+//  while (1)
+//  {
+//    /* USER CODE END WHILE */
+//
+//    /* USER CODE BEGIN 3 */
+//
+//	// TODO: Check button PA0; if pressed, change timer delay
+//	  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_RESET) {  // Check if PA0 is pressed
+//		  if(change == 0){
+//			  __HAL_TIM_SET_AUTORELOAD(&htim16, 1000);
+//			  change = 1;
+//		  }
+//		  else if(change == 1){
+//			  __HAL_TIM_SET_AUTORELOAD(&htim16, 500);
+//			  change = 0;
+//		  }
+//	  }
+//	  else{
+//		  if(change == 0){
+//			  __HAL_TIM_SET_AUTORELOAD(&htim16, 500);
+//		  }
+//		  else if(change == 1){
+//			  __HAL_TIM_SET_AUTORELOAD(&htim16, 1000);
+//		  }
+//	  }
+//  }
   while (1)
   {
-    /* USER CODE END WHILE */
+      uint8_t currentButtonState = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
 
-    /* USER CODE BEGIN 3 */
+      if (lastButtonState == GPIO_PIN_SET && currentButtonState == GPIO_PIN_RESET) {
+          // Button was just pressed
+          if (change == 0) {
+              __HAL_TIM_SET_AUTORELOAD(&htim16, 1000);
+              change = 1;
+          } else if (change == 1) {
+              __HAL_TIM_SET_AUTORELOAD(&htim16, 500);
+              change = 0;
+          }
+          // Debounce delay to avoid multiple presses
+          HAL_Delay(100);
+      }
 
-	// TODO: Check button PA0; if pressed, change timer delay
-	  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET) {  // Check if PA0 is pressed
-//	      __HAL_TIM_SET_AUTORELOAD(&htim16, 1000);  // Set ARR value for 0.5-second delay
-		  GPIOB->ODR = 0b11111111;
-	  }
-	  else {
-//	      __HAL_TIM_SET_AUTORELOAD(&htim16, 500);  // Set ARR value for 1-second delay
-		  GPIOB->ODR = 0b01010101;
-	  }
+      if (change == 0) {
+          __HAL_TIM_SET_AUTORELOAD(&htim16, 500);
+      } else if (change == 1) {
+          __HAL_TIM_SET_AUTORELOAD(&htim16, 1000);
+      }
 
+      lastButtonState = currentButtonState;
   }
   /* USER CODE END 3 */
 }
