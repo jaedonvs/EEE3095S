@@ -129,33 +129,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-//  while (1)
-//  {
-//    /* USER CODE END WHILE */
-//
-//    /* USER CODE BEGIN 3 */
-//
-//	// TODO: Check button PA0; if pressed, change timer delay
-//	  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_RESET) {  // Check if PA0 is pressed
-//		  if(change == 0){
-//			  __HAL_TIM_SET_AUTORELOAD(&htim16, 1000);
-//			  change = 1;
-//		  }
-//		  else if(change == 1){
-//			  __HAL_TIM_SET_AUTORELOAD(&htim16, 500);
-//			  change = 0;
-//		  }
-//	  }
-//	  else{
-//		  if(change == 0){
-//			  __HAL_TIM_SET_AUTORELOAD(&htim16, 500);
-//		  }
-//		  else if(change == 1){
-//			  __HAL_TIM_SET_AUTORELOAD(&htim16, 1000);
-//		  }
-//	  }
-//  }
-  while (1)
+ while (1)
   {
       uint8_t currentButtonState = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
 
